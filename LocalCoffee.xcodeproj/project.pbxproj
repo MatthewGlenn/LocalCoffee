@@ -17,6 +17,7 @@
 		DD8D2B9F21ED555B001846F4 /* DownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8D2B9E21ED555B001846F4 /* DownloaderTests.swift */; };
 		DD8D2BA421ED7269001846F4 /* CoffeeShopTest.json in Resources */ = {isa = PBXBuildFile; fileRef = DD8D2BA321ED7269001846F4 /* CoffeeShopTest.json */; };
 		DD8D2BA621ED7A48001846F4 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8D2BA521ED7A48001846F4 /* Parser.swift */; };
+		DD8D2BB421F194E0001846F4 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8D2BB321F194E0001846F4 /* ParserTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		DD8D2B9E21ED555B001846F4 /* DownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloaderTests.swift; sourceTree = "<group>"; };
 		DD8D2BA321ED7269001846F4 /* CoffeeShopTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CoffeeShopTest.json; sourceTree = "<group>"; };
 		DD8D2BA521ED7A48001846F4 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		DD8D2BB321F194E0001846F4 /* ParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				DD8D2BAB21EEDF76001846F4 /* Objects */,
-				DD8D2B9921ED545B001846F4 /* Networking */,
+				DD8D2B9921ED545B001846F4 /* Controllers */,
 				DD8D2B9A21ED5471001846F4 /* ViewControllers */,
 				DD8D2B9B21ED54B1001846F4 /* Storyboards */,
 				DD8D2B6621ED5373001846F4 /* AppDelegate.swift */,
@@ -121,6 +123,7 @@
 				DD8D2BA321ED7269001846F4 /* CoffeeShopTest.json */,
 				DD8D2B8221ED5375001846F4 /* Info.plist */,
 				DD8D2B9E21ED555B001846F4 /* DownloaderTests.swift */,
+				DD8D2BB321F194E0001846F4 /* ParserTests.swift */,
 			);
 			path = LocalCoffeeTests;
 			sourceTree = "<group>";
@@ -133,13 +136,13 @@
 			path = LocalCoffeeUITests;
 			sourceTree = "<group>";
 		};
-		DD8D2B9921ED545B001846F4 /* Networking */ = {
+		DD8D2B9921ED545B001846F4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				DD8D2B9C21ED5535001846F4 /* Downloader.swift */,
 				DD8D2BA521ED7A48001846F4 /* Parser.swift */,
 			);
-			path = Networking;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		DD8D2B9A21ED5471001846F4 /* ViewControllers */ = {
@@ -241,6 +244,7 @@
 					};
 					DD8D2B8621ED5375001846F4 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = DD8D2B6221ED5373001846F4;
 					};
 				};
@@ -310,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD8D2BB421F194E0001846F4 /* ParserTests.swift in Sources */,
 				DD8D2B9F21ED555B001846F4 /* DownloaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,6 +555,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LocalCoffeeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -559,6 +565,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.LocalCoffeeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LocalCoffeeUITests/LocalCoffeeUITests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = LocalCoffee;
@@ -569,6 +577,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = LocalCoffeeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -578,6 +587,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.LocalCoffeeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LocalCoffeeUITests/LocalCoffeeUITests-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = LocalCoffee;
