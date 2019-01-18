@@ -24,6 +24,4 @@ class ParserTests: XCTestCase {
         let returned = Parser().unwrapDictionaryValue(withDictionary: dictionary, withKey: "name")
         XCTAssertNotEqual(expected, returned, "The Expected Dictionary value did not match the returned value")
     }
-    
-    
 }

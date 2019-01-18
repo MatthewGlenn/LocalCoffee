@@ -16,6 +16,7 @@ class DownloaderTests: XCTestCase {
         let returned = Downloader().getVenuesURL(withLatitude: latitude, withLongitude: longitude)
         XCTAssertEqual(returned, expected, "The expected string:\n\(String(describing: expected))\n, did not match returned string:\n\(String(describing: returned))\n")
     }
+    
     func testGetVenuesURL() {
         let photoID = "123"
         let expected = URL(string: "https://api.foursquare.com/v2/venues/\(123)/photos?client_id=PNFFWVDODBS00GSDP05FM4QFU0T45WNWUAOWDDFBSGDGB3FM&client_secret=CZEYGXPXTROLNWVIYSMKUA5PWBQJQ4ZXYZRRUNCP2C3BEIZQ&v=20190101")

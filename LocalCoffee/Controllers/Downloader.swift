@@ -47,10 +47,9 @@ class Downloader {
     /// Parameter latitude: the latitude to download from
     /// Parameter longitude: the longitude to download from
     func downloadCoffeeShops(withLatitude latitude: Double = Latitude, withLongitude longitude: Double = Longitude) {
-        //Cancel any previous data tasks
         dataTask?.cancel()
         guard let url = getVenuesURL(withLatitude: latitude, withLongitude: longitude) else {
-            NSLog("Error: Invalid URL")
+            debugPrint("Error: Invalid URL")
             return
         }
         
@@ -91,7 +90,6 @@ class Downloader {
     
     /// This method downloads the coffee shop pictures based on the coffee shop photo urls in Core Data
     func downloadCoffeeShopPictures(withID id: String){
-//        dataTask?.cancel()
         guard let url = getPhotoUrl(withID: id) else {
             debugPrint("Error: Invalid URL")
             return

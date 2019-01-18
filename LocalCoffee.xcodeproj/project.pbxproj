@@ -105,7 +105,6 @@
 		DD8D2B6521ED5373001846F4 /* LocalCoffee */ = {
 			isa = PBXGroup;
 			children = (
-				DD8D2BAB21EEDF76001846F4 /* Objects */,
 				DD8D2B9921ED545B001846F4 /* Controllers */,
 				DD8D2B9A21ED5471001846F4 /* ViewControllers */,
 				DD8D2B9B21ED54B1001846F4 /* Storyboards */,
@@ -160,13 +159,6 @@
 				DD8D2B7421ED5375001846F4 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		DD8D2BAB21EEDF76001846F4 /* Objects */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
