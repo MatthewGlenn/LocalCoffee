@@ -13,13 +13,10 @@
 		DD8D2B7121ED5373001846F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8D2B6F21ED5373001846F4 /* Main.storyboard */; };
 		DD8D2B7321ED5375001846F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD8D2B7221ED5375001846F4 /* Assets.xcassets */; };
 		DD8D2B7621ED5375001846F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8D2B7421ED5375001846F4 /* LaunchScreen.storyboard */; };
-		DD8D2B8121ED5375001846F4 /* LocalCoffeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8D2B8021ED5375001846F4 /* LocalCoffeeTests.swift */; };
-		DD8D2B8C21ED5375001846F4 /* LocalCoffeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8D2B8B21ED5375001846F4 /* LocalCoffeeUITests.swift */; };
 		DD8D2B9D21ED5535001846F4 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8D2B9C21ED5535001846F4 /* Downloader.swift */; };
 		DD8D2B9F21ED555B001846F4 /* DownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8D2B9E21ED555B001846F4 /* DownloaderTests.swift */; };
 		DD8D2BA421ED7269001846F4 /* CoffeeShopTest.json in Resources */ = {isa = PBXBuildFile; fileRef = DD8D2BA321ED7269001846F4 /* CoffeeShopTest.json */; };
 		DD8D2BA621ED7A48001846F4 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8D2BA521ED7A48001846F4 /* Parser.swift */; };
-		DD8D2BA821ED8714001846F4 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8D2BA721ED8714001846F4 /* ParserTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,16 +46,13 @@
 		DD8D2B7521ED5375001846F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD8D2B7721ED5375001846F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD8D2B7C21ED5375001846F4 /* LocalCoffeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalCoffeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD8D2B8021ED5375001846F4 /* LocalCoffeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCoffeeTests.swift; sourceTree = "<group>"; };
 		DD8D2B8221ED5375001846F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD8D2B8721ED5375001846F4 /* LocalCoffeeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalCoffeeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD8D2B8B21ED5375001846F4 /* LocalCoffeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCoffeeUITests.swift; sourceTree = "<group>"; };
 		DD8D2B8D21ED5375001846F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD8D2B9C21ED5535001846F4 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		DD8D2B9E21ED555B001846F4 /* DownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloaderTests.swift; sourceTree = "<group>"; };
 		DD8D2BA321ED7269001846F4 /* CoffeeShopTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CoffeeShopTest.json; sourceTree = "<group>"; };
 		DD8D2BA521ED7A48001846F4 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-		DD8D2BA721ED8714001846F4 /* ParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,10 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				DD8D2BA321ED7269001846F4 /* CoffeeShopTest.json */,
-				DD8D2B8021ED5375001846F4 /* LocalCoffeeTests.swift */,
 				DD8D2B8221ED5375001846F4 /* Info.plist */,
 				DD8D2B9E21ED555B001846F4 /* DownloaderTests.swift */,
-				DD8D2BA721ED8714001846F4 /* ParserTests.swift */,
 			);
 			path = LocalCoffeeTests;
 			sourceTree = "<group>";
@@ -136,7 +128,6 @@
 		DD8D2B8A21ED5375001846F4 /* LocalCoffeeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				DD8D2B8B21ED5375001846F4 /* LocalCoffeeUITests.swift */,
 				DD8D2B8D21ED5375001846F4 /* Info.plist */,
 			);
 			path = LocalCoffeeUITests;
@@ -320,8 +311,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD8D2B9F21ED555B001846F4 /* DownloaderTests.swift in Sources */,
-				DD8D2B8121ED5375001846F4 /* LocalCoffeeTests.swift in Sources */,
-				DD8D2BA821ED8714001846F4 /* ParserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +318,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD8D2B8C21ED5375001846F4 /* LocalCoffeeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -68,6 +68,9 @@ class Downloader {
     }
     
     func getCoffeeShopPictures(){
+        if self.managedObjectContext == nil {
+            self.managedObjectContext = AppDelegate().persistentContainer.viewContext
+        }
         let fetchRequest = NSFetchRequest<CoffeeShop>(entityName: "CoffeeShop")
         do {
             //Check for duplicates before adding

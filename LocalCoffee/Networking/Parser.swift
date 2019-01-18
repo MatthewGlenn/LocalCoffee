@@ -46,9 +46,8 @@ class Parser {
                 }
             }
             debugPrint("Finished Downloading Coffee Shops")
-            DispatchQueue.global(qos: .userInitiated).async {
-                Downloader().getCoffeeShopPictures()
-            }
+            NotificationCenter.default.post(name: .NSManagedObjectContextObjectsDidChange, object: nil)
+            Downloader().getCoffeeShopPictures()
         } catch let error as NSError {
             debugPrint("Failed to load: \(error.localizedDescription)")
         }
