@@ -10,7 +10,6 @@
 		DD8D2B6721ED5373001846F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8D2B6621ED5373001846F4 /* AppDelegate.swift */; };
 		DD8D2B6A21ED5373001846F4 /* LocalCoffee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD8D2B6821ED5373001846F4 /* LocalCoffee.xcdatamodeld */; };
 		DD8D2B6C21ED5373001846F4 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8D2B6B21ED5373001846F4 /* MasterViewController.swift */; };
-		DD8D2B6E21ED5373001846F4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8D2B6D21ED5373001846F4 /* DetailViewController.swift */; };
 		DD8D2B7121ED5373001846F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8D2B6F21ED5373001846F4 /* Main.storyboard */; };
 		DD8D2B7321ED5375001846F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD8D2B7221ED5375001846F4 /* Assets.xcassets */; };
 		DD8D2B7621ED5375001846F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8D2B7421ED5375001846F4 /* LaunchScreen.storyboard */; };
@@ -45,7 +44,6 @@
 		DD8D2B6621ED5373001846F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD8D2B6921ED5373001846F4 /* LocalCoffee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalCoffee.xcdatamodel; sourceTree = "<group>"; };
 		DD8D2B6B21ED5373001846F4 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		DD8D2B6D21ED5373001846F4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DD8D2B7021ED5373001846F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD8D2B7221ED5375001846F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD8D2B7521ED5375001846F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				DD8D2B6B21ED5373001846F4 /* MasterViewController.swift */,
-				DD8D2B6D21ED5373001846F4 /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -315,7 +312,6 @@
 				DD8D2BA621ED7A48001846F4 /* Parser.swift in Sources */,
 				DD8D2B6A21ED5373001846F4 /* LocalCoffee.xcdatamodeld in Sources */,
 				DD8D2B6C21ED5373001846F4 /* MasterViewController.swift in Sources */,
-				DD8D2B6E21ED5373001846F4 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

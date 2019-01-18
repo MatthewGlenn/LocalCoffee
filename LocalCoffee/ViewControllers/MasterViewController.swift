@@ -11,40 +11,32 @@ import CoreData
 
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
-    var detailViewController: DetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
-        if let split = splitViewController {
-            let controllers = split.viewControllers
-            detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+        NotificationCenter.default.addObserver(self, selector: #selector(update), name: .NSManagedObjectContextObjectsDidChange, object: nil)
+        DispatchQueue.global(qos: .userInitiated).async {
+            Downloader().downloadCoffeeShops()
         }
-        Downloader().downloadCoffeeShops {
-            Downloader().downloadCoffeeShopPictures()
+    }
+    
+    @objc func update(){
+        DispatchQueue.global(qos: .userInitiated).async  {
+            do {
+                try self._fetchedResultsController?.performFetch()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }catch{
+                debugPrint("Failed To Fetch Results")
+            }
         }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
-    }
-
-
-    // MARK: - Segues
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-            let object = fetchedResultsController.object(at: indexPath)
-                let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
-                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
-                controller.navigationItem.leftItemsSupplementBackButton = true
-            }
-        }
     }
 
     // MARK: - Table View
@@ -73,12 +65,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     func configureCell(_ cell: UITableViewCell, withCoffeeShop coffeeShop: CoffeeShop) {
         cell.textLabel!.text = coffeeShop.name!.description
         cell.detailTextLabel?.text = coffeeShop.address!.description
-//        if let imageData = coffeeShop.photo, let image = UIImage(data: imageData) {
-//            cell.imageView?.image = image
-//        }else{
+        if let imageData = coffeeShop.photo, let image = UIImage(data: imageData) {
+            cell.imageView?.image = image
+        }else{
             cell.imageView?.image = UIImage(named: "Placeholder")
-//        }
-        
+        }
     }
 
     // MARK: - Fetched results controller
@@ -100,7 +91,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         
         // Edit the section name key path and cache name if appropriate.
         // nil for section name key path means "no sections".
-        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: "Master")
+        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
         aFetchedResultsController.delegate = self
         _fetchedResultsController = aFetchedResultsController
         
@@ -117,11 +108,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }    
     var _fetchedResultsController: NSFetchedResultsController<CoffeeShop>? = nil
 
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    private func controllerWillChangeContent(_ controller: NSFetchedResultsController<CoffeeShop>) {
         tableView.beginUpdates()
     }
 
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+    private func controller(_ controller: NSFetchedResultsController<CoffeeShop>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
         switch type {
             case .insert:
                 tableView.insertSections(IndexSet(integer: sectionIndex), with: .fade)
@@ -132,7 +123,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
 
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    private func controller(_ controller: NSFetchedResultsController<CoffeeShop>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
             case .insert:
                 tableView.insertRows(at: [newIndexPath!], with: .fade)
